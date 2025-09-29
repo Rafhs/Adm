@@ -63,7 +63,7 @@ def processar_vencimentos(df):
     return df_proc
 
 # CONSTRUÇÃO DA PÁGINA
-st.title("📊 Dashboard Principal")
+st.title("📊 Dashboard")
 st.markdown("Visão geral do status dos exames ocupacionais.")
 
 df_bruto = carregar_dados_dashboard()
@@ -79,7 +79,7 @@ if not df_bruto.empty:
     col3.metric("🟢 Exames em Dia", status_counts.get("🟢 Em Dia", 0))
 
     opcoes_empresa = ["Todas"] + sorted(df_processado['Empresa'].unique())
-    opcoes_tipo_exame = ["Todos"] + sorted(df_processado['Tipo de Exame'].unique())
+    opcoes_tipo_exame = ["Todos"] + sorted(df_processado['Tipo'].unique())
     opcoes_status = ["Todos"] + ["🔴 Vencido", "🟡 Vence em Breve", "🟢 Em Dia"]
 
     selecao_empresa = st.sidebar.selectbox("Empresa:", options=opcoes_empresa)
