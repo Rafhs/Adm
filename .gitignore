@@ -1,0 +1,21 @@
+# Arquivos de credenciais do Google
+# ESSES ARQUIVOS CONTÊM CHAVES PRIVADAS E NUNCA DEVEM SER PUBLICADOS
+credentials.json
+.streamlit/secrets.toml
+
+# Pasta de ambiente virtual do Python (se você usar uma)
+# Contém bibliotecas instaladas e é específica da sua máquina
+.venv/
+venv/
+env/
+
+# Arquivos de cache do Python
+# São gerados automaticamente e não são necessários no repositório
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de sistema operacional (boa prática)
+.DS_Store
+Thumbs.db
