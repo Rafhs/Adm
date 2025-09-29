@@ -94,7 +94,7 @@ if not df_bruto.empty:
     if selecao_status != "Todos":
         df_filtrado = df_filtrado[df_filtrado['Status'] == selecao_status]
 
-    st.header("Situação Detalhada")
+    st.header("Situação")
     df_para_exibir = df_filtrado[[
         'Matrícula', 'Nome do Funcionário', 'Empresa', 'Cargo', 'Tipo de Exame',
         'Data do Último Exame', 'Data de Vencimento', 'Status'
