@@ -99,9 +99,9 @@ else:
 
         # --- SEÇÃO DE GERAR AUTORIZAÇÃO ---
         st.divider()
-        st.subheader("Gerar Autorização em Massa")
+        st.subheader("Autorização em massa.")
 
-        if st.button("Gerar Texto para Todos os Funcionários"):
+        if st.button("Gerar Texto"):
             if not funcionarios_vencidos_na_funcao.empty:
                 primeiro_funcionario = funcionarios_vencidos_na_funcao.iloc[0]
                 empresa_func = primeiro_funcionario.get('Empresa', 'não informada').title()
@@ -115,17 +115,18 @@ else:
                     nome_func = funcionario.get('Nome do Funcionário', 'não informado').title()
                     cpf_func = funcionario.get('CPF', 'não informado')
                     cpf_formatado = utils.formatar_cpf(cpf_func)
-                    lista_funcionarios_str.append(f"- Nome: {nome_func} - CPF: {cpf_formatado}")
+                    lista_funcionarios_str.append(f"Nome: {nome_func} - CPF: {cpf_formatado}")
 
                 funcionarios_formatados = "\n".join(lista_funcionarios_str)
                 bateria_exames_str = "\n".join([f"- {exame.title()}" for exame in exames_obrigatorios])
 
                 texto_final = f"""Autorizamos os funcionários abaixo a realizar exame {tipo_exame_generico}.
 
-Empresa: {empresa_func} - CNPJ: {cnpj_func} - Área: {area_func}
-Função: {funcao_formatada}
+Empresa: {empresa_func} - CNPJ: {cnpj_func} 
+Área: {area_func}
 
 {funcionarios_formatados}
+Função: {funcao_formatada}
 
 Seguir bateria de exames conforme PCMSO:
 {bateria_exames_str}
